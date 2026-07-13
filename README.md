@@ -26,12 +26,13 @@ This project was built using modern web development tools focused on speed, reli
 *   **[TypeScript](https://www.typescriptlang.org/)**: For robust, type-safe code.
 *   **[Vanilla CSS & Tailwind-inspired Tokens]**: Custom CSS architecture for the Dark Navy enterprise theme and glassmorphism components.
 
-### **Backend (Prepared Infrastructure)**
-*   **[FastAPI (Python)](https://fastapi.tiangolo.com/)**: High-performance backend framework prepared with WebSocket capabilities for real-time chat and POST endpoints for file parsing.
+### **Backend (Optional API Infrastructure)**
+*   **[FastAPI (Python)](https://fastapi.tiangolo.com/)**: High-performance API with WebSocket capabilities for real-time chat and a POST endpoint for file parsing.
 *   **[Uvicorn](https://www.uvicorn.org/)**: ASGI server for running FastAPI.
 
 ### **AI Core**
-*   **Custom TypeScript Engine (`aiEngine.ts`)**: A self-contained, pattern-matching AI brain simulating LLM responses for demonstrations without requiring OpenAI/external API keys.
+*   **Custom TypeScript Engine (`aiEngine.ts`)**: A self-contained, pattern-matching AI brain used by the frontend demo without requiring external API keys.
+*   **Optional OpenAI backend**: The WebSocket API uses an OpenAI key from `backend/.env` when the backend is started.
 
 ## 🚀 How to Run Locally
 
@@ -48,7 +49,7 @@ The app will be available at `http://localhost:5173` (or `5174`).
 cd backend
 python -m venv venv
 venv\Scripts\activate
-pip install fastapi uvicorn
+pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 The API runs at `http://localhost:8000`.

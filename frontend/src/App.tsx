@@ -102,7 +102,6 @@ export default function App() {
   const [isRecording, setIsRecording] = useState(false);
   const [currentTime, setCurrentTime] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
-  const [showSearch, setShowSearch] = useState(false);
   const [inputFocused, setInputFocused] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -139,7 +138,7 @@ export default function App() {
     if (!activeSessionId) { setMessages([]); setHistory([]); return; }
     const s = sessions.find(s => s.id === activeSessionId);
     if (s) { setMessages(s.messages); setHistory(s.history); }
-  }, [activeSessionId]);
+  }, [activeSessionId, sessions]);
 
   // ── Persist messages back into sessions
   const persistSession = useCallback((
@@ -340,7 +339,7 @@ export default function App() {
   // RENDER
   // ══════════════════════════════════════════════════════
   return (
-    <div id="root">
+    <div className="app">
 
       {/* ═══════════ SIDEBAR ═══════════ */}
       <aside className="sidebar">

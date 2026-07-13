@@ -379,7 +379,7 @@ CCTV ವಿಶ್ಲೇಷಣೆ ನಡೆಯುತ್ತಿದೆ...`;
 
 export async function streamAIResponse(
   prompt: string,
-  history: AIMessage[],
+  _history: AIMessage[],
   onToken: (token: string) => void,
   onStatus: (status: string) => void,
   onDone: () => void
@@ -498,4 +498,3 @@ export function getPredictions(prompt: string): string[] {
     '🚓 ಗಸ್ತು ಮಾರ್ಗ ಶಿಫಾರಸು',
   ];
 }
-
